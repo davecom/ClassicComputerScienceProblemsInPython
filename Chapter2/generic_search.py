@@ -150,8 +150,6 @@ def bfs(initial: T, goal_test: Callable[[T], bool], successors: Callable[[T], Li
     return None  # went through everything and never found goal
 
 
-# Upon each pop() returns the item with the highest lowest priority
-# unless max is set to true
 class PriorityQueue(Generic[T]):
     def __init__(self) -> None:
         self._container: List[T] = []

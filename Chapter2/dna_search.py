@@ -19,7 +19,7 @@ def string_to_gene(s: str) -> Gene:
     return gene
 
 
-my_gene = string_to_gene(gene_str)
+my_gene: Gene = string_to_gene(gene_str)
 
 
 def linear_contains(gene: Gene, key_codon: Codon) -> bool:

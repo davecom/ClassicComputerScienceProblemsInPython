@@ -55,6 +55,7 @@ class MCState:
                 sucs.append(MCState(self.wm + 1, self.wc + 1, not self.boat))
         return [x for x in sucs if x.is_legal]
 
+
 def display_solution(path: List[MCState]):
     if len(path) == 0: # sanity check
         return
@@ -69,6 +70,7 @@ def display_solution(path: List[MCState]):
                   .format(old_state.wm - current_state.wm, old_state.wc - current_state.wc))
         print(current_state)
         old_state = current_state
+
 
 if __name__ == "__main__":
     start: MCState = MCState(3, 3, True)
