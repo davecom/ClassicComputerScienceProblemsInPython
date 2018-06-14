@@ -74,6 +74,7 @@ class WordSearchConstraint(Constraint[str, List[GridLocation]]):
             return False
         return True
 
+
 if __name__ == "__main__":
     grid: Grid = generate_grid(9, 9)
     words: List[str] = ["MATTHEW", "JOE", "MARY", "SARAH", "SALLY"]

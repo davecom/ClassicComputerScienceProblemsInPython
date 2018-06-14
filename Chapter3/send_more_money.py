@@ -45,6 +45,7 @@ class SendMoreMoneyConstraint(Constraint[str, int]):
             return False # this full assignment doesn't work
         return True # no conflict
 
+
 if __name__ == "__main__":
     letters: List[str] = ["S", "E", "N", "D", "M", "O", "R", "Y"]
     possible_digits: Dict[str, List[int]] = {}

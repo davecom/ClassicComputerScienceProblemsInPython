@@ -33,6 +33,7 @@ class QueensConstraint(Constraint[int, int]):
                         return False
         return True # no conflict
 
+
 if __name__ == "__main__":
     columns: List[int] = [1, 2, 3, 4, 5, 6, 7, 8]
     rows: Dict[int, List[int]] = {}
