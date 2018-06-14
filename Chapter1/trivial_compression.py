@@ -14,10 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 class CompressedGene:
-    def __init__(self, gene: str):
+    def __init__(self, gene: str) -> None:
         self._compress(gene)
 
-    def _compress(self, gene: str):
+    def _compress(self, gene: str) -> None:
         self.bit_string: int = 1  # start with sentinel
         for nucleotide in gene.upper():
             self.bit_string <<= 2  # shift left two bits

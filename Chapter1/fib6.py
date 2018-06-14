@@ -13,7 +13,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-def fib6(n: int) -> int:
+from typing import Generator
+
+
+def fib6(n: int) -> Generator[int, None, None]:
     yield 0  # special case
     if n > 0: yield 1  # special case
     last: int = 0  # initially set to fib(0)
