@@ -14,13 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 from typing import Dict
-memo: Dict[int, int] = {0: 0, 1: 1}  # our old base cases
+memo: Dict[int, int] = {0: 0, 1: 1}  # our base cases
 
 
 def fib3(n: int) -> int:
-    if n in memo:  # our new base cases
-        return memo[n]
-    else:
+    if n not in memo:
         memo[n] = fib3(n - 1) + fib3(n - 2)  # memoization
     return memo[n]
 

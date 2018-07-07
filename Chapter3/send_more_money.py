@@ -40,9 +40,7 @@ class SendMoreMoneyConstraint(Constraint[str, int]):
             send: int = s * 1000 + e * 100 + n * 10 + d
             more: int = m * 1000 + o * 100 + r * 10 + e
             money: int = m * 10000 + o * 1000 + n * 100 + e * 10 + y
-            if send + more == money:
-                return True # answer found
-            return False # this full assignment doesn't work
+            return send + more == money
         return True # no conflict
 
 

@@ -15,6 +15,7 @@
 # limitations under the License.
 from typing import NamedTuple, List, Dict, Optional
 from random import choice
+from string import ascii_uppercase
 from csp import CSP, Constraint
 
 Grid = List[List[str]]  # type alias for grids
@@ -25,12 +26,9 @@ class GridLocation(NamedTuple):
     column: int
 
 
-ALPHABET: str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
-
 def generate_grid(rows: int, columns: int) -> Grid:
     # initialize grid with random letters
-    return [[choice(ALPHABET) for c in range(columns)] for r in range(rows)]
+    return [[choice(ascii_uppercase) for c in range(columns)] for r in range(rows)]
 
 
 def display_grid(grid: Grid) -> None:
@@ -70,9 +68,7 @@ class WordSearchConstraint(Constraint[str, List[GridLocation]]):
     def satisfied(self, assignment: Dict[str, List[GridLocation]]) -> bool:
         # if there are any duplicates grid locations then there is an overlap
         all_locations = [locs for values in assignment.values() for locs in values]
-        if len(set(all_locations)) < len(all_locations):
-            return False
-        return True
+        return len(set(all_locations)) == len(all_locations)
 
 
 if __name__ == "__main__":

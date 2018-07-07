@@ -13,10 +13,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+
 def fib2(n: int) -> int:
     if n < 2:  # base case
         return n
     return fib2(n - 2) + fib2(n - 1)  # recursive case
+
 
 if __name__ == "__main__":
     print(fib2(5))

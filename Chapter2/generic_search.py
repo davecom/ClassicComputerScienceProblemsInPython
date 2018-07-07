@@ -13,6 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+from __future__ import annotations
 from typing import TypeVar, Iterable, Sequence, Generic, List, Callable, Set, Deque, Dict, Any, Optional
 from typing_extensions import Protocol
 from functools import total_ordering
@@ -81,13 +82,13 @@ class Stack(Generic[T]):
 
 
 class Node(Generic[T]):
-    def __init__(self, state: T, parent: Optional['Node'], cost: float = 0.0, heuristic: float = 0.0) -> None:
+    def __init__(self, state: T, parent: Optional[Node], cost: float = 0.0, heuristic: float = 0.0) -> None:
         self.state: T = state
-        self.parent: Optional['Node'] = parent
+        self.parent: Optional[Node] = parent
         self.cost: float = cost
         self.heuristic: float = heuristic
 
-    def __lt__(self, other: 'Node') -> bool:
+    def __lt__(self, other: Node) -> bool:
         return (self.cost + self.heuristic) < (other.cost + other.heuristic)
 
 

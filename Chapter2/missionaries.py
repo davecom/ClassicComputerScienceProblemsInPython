@@ -13,6 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+from __future__ import annotations
 from typing import List, Optional
 from generic_search import bfs, Node, node_to_path
 
@@ -44,8 +45,8 @@ class MCState:
             return False
         return True
 
-    def successors(self) -> List["MCState"]:
-        sucs: List["MCState"] = []
+    def successors(self) -> List[MCState]:
+        sucs: List[MCState] = []
         if self.boat: # boat on west bank
             if self.wm > 1:
                 sucs.append(MCState(self.wm - 2, self.wc, not self.boat))
@@ -88,7 +89,7 @@ def display_solution(path: List[MCState]):
 
 
 if __name__ == "__main__":
-    start: MCState = MCState(3, 3, True)
+    start: MCState = MCState(MAX_NUM, MAX_NUM, True)
     solution: Optional[Node[MCState]] = bfs(start, MCState.goal_test, MCState.successors)
     if solution is None:
         print("No solution found!")
