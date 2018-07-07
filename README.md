@@ -1,8 +1,8 @@
 # Classic Computer Science Problems in Python
-This repository contains source code to accompany the forthcoming book Classic Computer Science Problems in Python by David Kopec. You will find the source organized by chapter. As you read the book, each code listing contains a file name that corresponds to a file in this repository.
+This repository contains source code to accompany the forthcoming book *Classic Computer Science Problems in Python* by David Kopec. You will find the source organized by chapter. As you read the book, each code listing contains a file name that corresponds to a file in this repository.
 
 ## Versioning and Packages
-Right now the source code in this repository requires Python 3.6 and installation of the [typing_extensions](https://github.com/python/typing/tree/master/typing_extensions) package. In the near future I hope to move to Python 3.7 and remove the dependency of the `typing_extensions` package.
+The source code in this repository requires Python 3.7 and installation of the [typing_extensions](https://github.com/python/typing/tree/master/typing_extensions) package.
 
 ## License
 All of the source code in this repository is released under the Apache License version 2.0. See `LICENSE`.
