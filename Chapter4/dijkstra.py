@@ -57,7 +57,7 @@ def dijkstra(wg: WeightedGraph[V], root: V) -> Tuple[List[Optional[float]], Dict
     return distances, path_dict
 
 
-# helper function to get easier access to dijkstra results
+# Helper function to get easier access to dijkstra results
 def distance_array_to_vertex_dict(wg: WeightedGraph[V], distances: List[Optional[float]]) -> Dict[V, Optional[float]]:
     distance_dict: Dict[V, Optional[float]] = {}
     for i in range(len(distances)):
@@ -65,8 +65,8 @@ def distance_array_to_vertex_dict(wg: WeightedGraph[V], distances: List[Optional
     return distance_dict
 
 
-# Takes a dictionary of edges to reach each node and returns an array of edges
-# that goes from `start` to `end`
+# Takes a dictionary of edges to reach each node and returns a list of
+# edges that goes from `start` to `end`
 def path_dict_to_path(start: int, end: int, path_dict: Dict[int, WeightedEdge]) -> WeightedPath:
     if len(path_dict) == 0:
         return []
@@ -111,8 +111,11 @@ if __name__ == "__main__":
 
     distances, path_dict = dijkstra(city_graph2, "Los Angeles")
     name_distance: Dict[str, Optional[int]] = distance_array_to_vertex_dict(city_graph2, distances)
+    print("Distances from Los Angeles:")
     for key, value in name_distance.items():
         print(f"{key} : {value}")
+    print("") # blank line
 
+    print("Shortest path from Los Angeles to Boston:")
     path: WeightedPath = path_dict_to_path(city_graph2.index_of("Los Angeles"), city_graph2.index_of("Boston"), path_dict)
     print_weighted_path(city_graph2, path)
