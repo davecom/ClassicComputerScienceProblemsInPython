@@ -211,4 +211,4 @@ def astar(initial: T, goal_test: Callable[[T], bool], successors: Callable[[T], 
 if __name__ == "__main__":
     print(linear_contains([1, 5, 15, 15, 15, 15, 20], 5))  # True
     print(binary_contains(["a", "d", "e", "f", "z"], "f"))  # True
-    print(binary_contains(["mark", "sarah", "john", "ronald"], "sheila"))  # False
+    print(binary_contains(["john", "mark", "ronald", "sarah"], "sheila"))  # False
