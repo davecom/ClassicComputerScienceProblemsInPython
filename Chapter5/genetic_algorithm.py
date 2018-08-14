@@ -39,11 +39,6 @@ class GeneticAlgorithm(Generic[C]):
     # Use the probability distribution wheel to pick 2 parents
     # Note: will not work with negative fitness results
     def _pick_roulette(self, wheel: List[float]) -> Tuple[C, C]:
-        # minimum: float = min(wheel)
-        # if minimum < 0: # scale so we have no negative weights
-        #     wheel = [x + abs(minimum) for x in wheel]
-        # total: float = sum(wheel)
-        # wheel = [(x / (total + 0.1)) for x in wheel]
         return tuple(choices(self._population, weights=wheel, k=2))
 
     # Choose num_participants at random and take the best 2
