@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 from __future__ import annotations
-from typing import TypeVar, Generic, List
+from typing import TypeVar, Generic, List, Sequence
 from copy import deepcopy
 from functools import partial
 from random import uniform
@@ -23,7 +23,7 @@ from dataclasses import dataclass
 from data_point import DataPoint
 
 
-def zscores(original: List[float]) -> List[float]:
+def zscores(original: Sequence[float]) -> List[float]:
     avg: float = mean(original)
     std: float = pstdev(original)
     if std == 0: # return all zeros if there is no variation
