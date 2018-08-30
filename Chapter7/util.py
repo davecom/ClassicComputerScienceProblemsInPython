@@ -17,10 +17,12 @@ from typing import List
 from math import exp
 
 
-def dot(xs: List[float], ys: List[float]) -> float:
+# dot product of two vectors
+def dot_product(xs: List[float], ys: List[float]) -> float:
     return sum(x * y for x, y in zip(xs, ys))
 
 
+# the classic sigmoid activation function
 def sigmoid(x: float) -> float:
     return 1.0 / (1.0 + exp(x))
 
