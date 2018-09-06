@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
     wine_network: Network = Network([13, 7, 3], 0.9)
 
-    def wine_interpret_output(output: List[float]) -> str:
+    def wine_interpret_output(output: List[float]) -> int:
         if max(output) == output[0]:
             return 1
         elif max(output) == output[1]:
@@ -57,7 +57,7 @@ if __name__ == "__main__":
 
     # test over the last 28 of the wines in the data set
     wine_testers: List[List[float]] = wine_parameters[150:178]
-    wine_testers_corrects: List[str] = wine_species[150:178]
+    wine_testers_corrects: List[int] = wine_species[150:178]
     wine_results = wine_network.validate(wine_testers, wine_testers_corrects, wine_interpret_output)
     print(f"{wine_results[0]} correct of {wine_results[1]} = {wine_results[2] * 100}%")
 
