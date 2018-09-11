@@ -23,7 +23,7 @@ from board import Piece, Board, Move
 class TTTPiece(Piece, Enum):
     X = "X"
     O = "O"
-    E = "E" # stand-in for empty
+    E = " " # stand-in for empty
 
     @property
     def opposite(self) -> Piece:
@@ -73,29 +73,9 @@ class TTTBoard(Board):
         else:
             return 0
 
-
-if __name__ == "__main__":
-    from minimax import find_best_move
-    # win in 1 move
-    to_win_easy_position: List[TTTPiece] = [TTTPiece.X, TTTPiece.O, TTTPiece.X,
-                                            TTTPiece.X, TTTPiece.E, TTTPiece.O,
-                                            TTTPiece.E, TTTPiece.E, TTTPiece.O]
-    test_board1: TTTBoard = TTTBoard(to_win_easy_position, TTTPiece.X)
-    answer1: Move = find_best_move(test_board1)
-    print(answer1)
-
-    # must block O's win
-    to_block_position: List[TTTPiece] = [TTTPiece.X, TTTPiece.E, TTTPiece.E,
-                                         TTTPiece.E, TTTPiece.E, TTTPiece.O,
-                                         TTTPiece.E, TTTPiece.X, TTTPiece.O]
-    test_board2: TTTBoard = TTTBoard(to_block_position, TTTPiece.X)
-    answer2: Move = find_best_move(test_board2)
-    print(answer2)
-
-    # find the best move to win 2 moves
-    to_win_hard_position: List[TTTPiece] = [TTTPiece.X, TTTPiece.E, TTTPiece.E,
-                                            TTTPiece.E, TTTPiece.E, TTTPiece.O,
-                                            TTTPiece.O, TTTPiece.X, TTTPiece.E]
-    test_board3: TTTBoard = TTTBoard(to_win_hard_position, TTTPiece.X)
-    answer3: Move = find_best_move(test_board3)
-    print(answer3)
+    def __repr__(self) -> str:
+        return f"""{self.position[0]}|{self.position[1]}|{self.position[2]}
+-----
+{self.position[3]}|{self.position[4]}|{self.position[5]}
+-----
+{self.position[6]}|{self.position[7]}|{self.position[8]}"""

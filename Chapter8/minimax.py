@@ -15,7 +15,6 @@
 # limitations under the License.
 from __future__ import annotations
 from typing import List
-from sys import float_info
 from board import Piece, Board, Move
 
 
@@ -27,13 +26,13 @@ def minimax(board: Board, maximizing: bool, original_player: Piece) -> float:
 
     # Recursive case - maximize your gains or minimize the opponent's gains
     if maximizing:
-        best_eval: float = float_info.min # arbitrarily low starting point
+        best_eval: float = float("-inf") # arbitrarily low starting point
         for move in board.legal_moves:
             result: float = minimax(board.move(move), False, original_player)
             best_eval = max(result, best_eval)
         return best_eval
     else: # minimizing
-        worst_eval: float = float_info.max
+        worst_eval: float = float("inf")
         for move in board.legal_moves:
             result = minimax(board.move(move), True, original_player)
             worst_eval = min(result, worst_eval)
@@ -42,7 +41,7 @@ def minimax(board: Board, maximizing: bool, original_player: Piece) -> float:
 
 # Run minimax() on every possible move to find the best one
 def find_best_move(board: Board) -> Move:
-    best_eval: float = float_info.min
+    best_eval: float = float("-inf")
     best_move: Move = Move(-1)
     for move in board.legal_moves:
         result: float = minimax(board.move(move), False, board.turn)
