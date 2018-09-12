@@ -16,7 +16,6 @@
 from __future__ import annotations
 from typing import List, Optional, Tuple
 from enum import Enum
-from copy import deepcopy, copy
 from board import Piece, Board, Move
 
 
@@ -121,10 +120,6 @@ class C4Board(Board):
             temp_position[c] = self.position[c].copy()
         temp_position[location].push(self._turn)
         return C4Board(temp_position, self._turn.opposite)
-        #temp_board: C4Board = deepcopy(self)
-        #temp_board.position[location].push(self._turn)
-        #temp_board._turn = self._turn.opposite
-        #return temp_board
 
     @property
     def legal_moves(self) -> List[Move]:
