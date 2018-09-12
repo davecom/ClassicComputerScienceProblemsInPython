@@ -15,7 +15,6 @@
 # limitations under the License.
 from __future__ import annotations
 from typing import List
-from dataclasses import dataclass
 from enum import Enum
 from board import Piece, Board, Move
 
@@ -26,7 +25,7 @@ class TTTPiece(Piece, Enum):
     E = " " # stand-in for empty
 
     @property
-    def opposite(self) -> Piece:
+    def opposite(self) -> TTTPiece:
         if self == TTTPiece.X:
             return TTTPiece.O
         elif self == TTTPiece.O:
@@ -35,19 +34,19 @@ class TTTPiece(Piece, Enum):
             return TTTPiece.E
 
 
-@dataclass(frozen=True)
 class TTTBoard(Board):
-    position: List[TTTPiece]
-    my_turn: TTTPiece
+    def __init__(self, position: List[TTTPiece] = [TTTPiece.E] * 9, turn: TTTPiece = TTTPiece.X) -> None:
+        self.position: List[TTTPiece] = position
+        self._turn: TTTPiece = turn
 
     @property
     def turn(self) -> Piece:
-        return self.my_turn
+        return self._turn
 
     def move(self, location: Move) -> Board:
         temp_position: List[TTTPiece] = self.position.copy()
-        temp_position[location] = self.turn
-        return TTTBoard(temp_position, self.turn.opposite)
+        temp_position[location] = self._turn
+        return TTTBoard(temp_position, self._turn.opposite)
 
     @property
     def legal_moves(self) -> List[Move]:
