@@ -14,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import unittest
+from typing import List
 from minimax import find_best_move
 from tictactoe import TTTPiece, TTTBoard
 from board import Move
