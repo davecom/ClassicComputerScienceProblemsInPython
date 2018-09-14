@@ -22,9 +22,8 @@ Move = NewType('Move', int)
 
 class Piece:
     @property
-    @abstractmethod
     def opposite(self) -> Piece:
-        ...
+        raise NotImplementedError("Should be implemented by subclasses.")
 
 
 class Board(ABC):

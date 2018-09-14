@@ -19,7 +19,7 @@ from board import Piece, Board, Move
 
 # Find the best possible outcome for original player
 def minimax(board: Board, maximizing: bool, original_player: Piece, max_depth: int = 8) -> float:
-    # Base case - evaluate the position if it is a win or a draw
+    # Base case – terminal position or maximum depth reached
     if board.is_win or board.is_draw or max_depth == 0:
         return board.evaluate(original_player)
 
@@ -28,18 +28,18 @@ def minimax(board: Board, maximizing: bool, original_player: Piece, max_depth: i
         best_eval: float = float("-inf") # arbitrarily low starting point
         for move in board.legal_moves:
             result: float = minimax(board.move(move), False, original_player, max_depth - 1)
-            best_eval = max(result, best_eval)
+            best_eval = max(result, best_eval) # we want the move with the highest evaluation
         return best_eval
     else: # minimizing
         worst_eval: float = float("inf")
         for move in board.legal_moves:
             result = minimax(board.move(move), True, original_player, max_depth - 1)
-            worst_eval = min(result, worst_eval)
+            worst_eval = min(result, worst_eval) # we want the move with the lowest evaluation
         return worst_eval
 
 
 def alphabeta(board: Board, maximizing: bool, original_player: Piece, max_depth: int = 8, alpha: float = float("-inf"), beta: float = float("inf")) -> float:
-    # Base case - evaluate the position if it is a win or a draw
+    # Base case – terminal position or maximum depth reached
     if board.is_win or board.is_draw or max_depth == 0:
         return board.evaluate(original_player)
 

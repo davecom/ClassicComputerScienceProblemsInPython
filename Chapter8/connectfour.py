@@ -102,7 +102,6 @@ class C4Board(Board):
             temp._container = self._container.copy()
             return temp
 
-
     def __init__(self, position: Optional[List[C4Board.Column]] = None, turn: C4Piece = C4Piece.B) -> None:
         if position is None:
             self.position: List[C4Board.Column] = [C4Board.Column() for _ in range(C4Board.NUM_COLUMNS)]
