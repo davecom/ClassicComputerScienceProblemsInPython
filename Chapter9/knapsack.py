@@ -27,13 +27,13 @@ def knapsack(items: List[Item], max_capacity: int) -> List[Item]:
     table: List[List[float]] = [[0.0 for _ in range(max_capacity + 1)] for _ in range(len(items) + 1)]
     for i, item in enumerate(items):
         for capacity in range(1, max_capacity + 1):
-            previous_item_value = table[i][capacity]
+            previous_items_value: float = table[i][capacity]
             if capacity >= item.weight: # item fits in knapsack
-                value_freeing_weight_for_item = table[i][capacity - item.weight]
+                value_freeing_weight_for_item: float = table[i][capacity - item.weight]
                 # only take if more valuable than previous item
-                table[i + 1][capacity] = max(value_freeing_weight_for_item + item.value, previous_item_value)
+                table[i + 1][capacity] = max(value_freeing_weight_for_item + item.value, previous_items_value)
             else: # no room for this item
-                table[i + 1][capacity] = previous_item_value
+                table[i + 1][capacity] = previous_items_value
     # figure out solution from table
     solution: List[Item] = []
     capacity = max_capacity

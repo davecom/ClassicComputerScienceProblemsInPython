@@ -13,8 +13,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+from typing import Dict, List, Iterable, Tuple
 from itertools import permutations
-from typing import Dict, List, Iterable, Tuple, Any
 
 vt_distances: Dict[str, Dict[str, int]] = {
     "Rutland":
@@ -50,7 +50,7 @@ tsp_paths: List[Tuple[str, ...]] = [c + (c[0],) for c in city_permutations]
 
 if __name__ == "__main__":
     best_path: Tuple[str, ...]
-    min_distance: int = 99999999999 # arbitrarily high nubmer
+    min_distance: int = 99999999999 # arbitrarily high number
     for path in tsp_paths:
         distance: int = 0
         last: str = path[0]
