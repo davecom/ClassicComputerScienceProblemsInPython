@@ -36,7 +36,7 @@ def knapsack(items: List[Item], max_capacity: int) -> List[Item]:
                 table[i + 1][capacity] = previous_item_value
     # figure out solution from table
     solution: List[Item] = []
-    capacity: int = max_capacity
+    capacity = max_capacity
     for i in range(len(items), 0, -1): # work backwards
         # was this item used?
         if table[i - 1][capacity] != table[i][capacity]:
