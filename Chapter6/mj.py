@@ -40,4 +40,4 @@ if __name__ == "__main__":
     kmeans: KMeans[Album] = KMeans(2, albums)
     clusters: List[KMeans.Cluster] = kmeans.run()
     for index, cluster in enumerate(clusters):
-        print(f"Cluster {index} Avg Length {cluster.centroid.dimensions[0]} Avg Tracks {cluster.centroid.dimensions[1]}: {cluster.points}")
+        print(f"Cluster {index} Avg Length {cluster.centroid.dimensions[0]} Avg Tracks {cluster.centroid.dimensions[1]}: {cluster.points}\n")

@@ -59,4 +59,4 @@ if __name__ == "__main__":
     kmeans: KMeans[Governor] = KMeans(2, governors)
     gov_clusters: List[KMeans.Cluster] = kmeans.run()
     for index, cluster in enumerate(gov_clusters):
-        print(f"Cluster {index}: {cluster.points}")
+        print(f"Cluster {index}: {cluster.points}\n")
