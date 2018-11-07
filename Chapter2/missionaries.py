@@ -31,7 +31,7 @@ class MCState:
     def __str__(self) -> str:
         return ("On the west bank there are {} missionaries and {} cannibals.\n" 
                 "On the east bank there are {} missionaries and {} cannibals.\n"
-                "The boast is on the {} bank.")\
+                "The boat is on the {} bank.")\
             .format(self.wm, self.wc, self.em, self.ec, ("west" if self.boat else "east"))
 
     def goal_test(self) -> bool:
