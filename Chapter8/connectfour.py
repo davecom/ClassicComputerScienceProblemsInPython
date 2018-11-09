@@ -33,6 +33,9 @@ class C4Piece(Piece, Enum):
         else:
             return C4Piece.E
 
+    def __str__(self) -> str:
+        return self.value
+
 
 def generate_segments(num_columns: int, num_rows: int, segment_length: int) -> List[List[Tuple[int, int]]]:
     segments: List[List[Tuple[int, int]]] = []

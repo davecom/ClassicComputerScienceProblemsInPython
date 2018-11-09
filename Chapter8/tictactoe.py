@@ -33,6 +33,9 @@ class TTTPiece(Piece, Enum):
         else:
             return TTTPiece.E
 
+    def __str__(self) -> str:
+        return self.value
+
 
 class TTTBoard(Board):
     def __init__(self, position: List[TTTPiece] = [TTTPiece.E] * 9, turn: TTTPiece = TTTPiece.X) -> None:

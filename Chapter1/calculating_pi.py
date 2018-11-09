@@ -13,6 +13,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+
 def calculate_pi(n_terms: int) -> float:
     numerator: float = 4.0
     denominator: float = 1.0
