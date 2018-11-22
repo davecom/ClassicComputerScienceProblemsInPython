@@ -16,7 +16,6 @@
 from __future__ import annotations
 from typing import TypeVar, Iterable, Sequence, Generic, List, Callable, Set, Deque, Dict, Any, Optional
 from typing_extensions import Protocol
-from functools import total_ordering
 from heapq import heappush, heappop
 
 T = TypeVar('T')
@@ -175,7 +174,7 @@ class PriorityQueue(Generic[T]):
         return not self._container  # not is true for empty container
 
     def push(self, item: T) -> None:
-        heappush(self._container, item)  # priority determined by order of item
+        heappush(self._container, item)  # in by priority
 
     def pop(self) -> T:
         return heappop(self._container)  # out by priority
