@@ -35,7 +35,8 @@ def mst(wg: WeightedGraph[V], start: int = 0) -> Optional[WeightedPath]:
 
     def visit(index: int):
         visited[index] = True # mark as visited
-        for edge in wg.edges_for_index(index): # add all edges coming from here to pq
+        for edge in wg.edges_for_index(index):
+            # add all edges coming from here to pq
             if not visited[edge.v]:
                 pq.push(edge)
 
@@ -45,7 +46,8 @@ def mst(wg: WeightedGraph[V], start: int = 0) -> Optional[WeightedPath]:
         edge = pq.pop()
         if visited[edge.v]:
             continue # don't ever revisit
-        result.append(edge) # this is the current smallest, so add it to solution
+        # this is the current smallest, so add it to solution
+        result.append(edge)
         visit(edge.v) # visit where this connects
 
     return result

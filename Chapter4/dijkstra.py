@@ -38,7 +38,8 @@ class DijkstraNode:
 
 def dijkstra(wg: WeightedGraph[V], root: V) -> Tuple[List[Optional[float]], Dict[int, WeightedEdge]]:
     first: int = wg.index_of(root) # find starting index
-    distances: List[Optional[float]] = [None] * wg.vertex_count # distances are unknown at first
+    # distances are unknown at first
+    distances: List[Optional[float]] = [None] * wg.vertex_count
     distances[first] = 0 # the root is 0 away from the root
     path_dict: Dict[int, WeightedEdge] = {} # how we got to each vertex
     pq: PriorityQueue[DijkstraNode] = PriorityQueue()
@@ -47,12 +48,18 @@ def dijkstra(wg: WeightedGraph[V], root: V) -> Tuple[List[Optional[float]], Dict
     while not pq.empty:
         u: int = pq.pop().vertex # explore the next closest vertex
         dist_u: float = distances[u] # should already have seen it
-        for we in wg.edges_for_index(u): # look at every edge/vertex from the vertex in question
-            dist_v: float = distances[we.v] # the old distance to this vertex
-            if dist_v is None or dist_v > we.weight + dist_u: # no old distance or found shorter path
-                distances[we.v] = we.weight + dist_u # update distance to this vertex
-                path_dict[we.v] = we # update the edge on the shortest path to this vertex
-                pq.push(DijkstraNode(we.v, we.weight + dist_u)) # explore it soon
+        # look at every edge/vertex from the vertex in question
+        for we in wg.edges_for_index(u):
+            # the old distance to this vertex
+            dist_v: float = distances[we.v]
+            # no old distance or found shorter path
+            if dist_v is None or dist_v > we.weight + dist_u:
+                # update distance to this vertex
+                distances[we.v] = we.weight + dist_u
+                # update the edge on the shortest path to this vertex
+                path_dict[we.v] = we
+                # explore it soon
+                pq.push(DijkstraNode(we.v, we.weight + dist_u))
 
     return distances, path_dict
 

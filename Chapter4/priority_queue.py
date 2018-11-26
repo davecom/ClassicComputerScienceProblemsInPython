@@ -29,7 +29,7 @@ class PriorityQueue(Generic[T]):
         return not self._container  # not is true for empty container
 
     def push(self, item: T) -> None:
-        heappush(self._container, item)  # priority determined by order of item
+        heappush(self._container, item)  # in by priority
 
     def pop(self) -> T:
         return heappop(self._container)  # out by priority
