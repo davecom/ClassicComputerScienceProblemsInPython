@@ -23,7 +23,8 @@ from zlib import compress
 from sys import getsizeof
 from pickle import dumps
 
-PEOPLE: List[str] = ["Michael", "Sarah", "Joshua", "Narine", "David", "Sajid", "Melanie", "Daniel", "Wei", "Dean", "Brian", "Murat", "Lisa"] # 165 bytes compressed
+# 165 bytes compressed
+PEOPLE: List[str] = ["Michael", "Sarah", "Joshua", "Narine", "David", "Sajid", "Melanie", "Daniel", "Wei", "Dean", "Brian", "Murat", "Lisa"]
 
 
 class ListCompression(Chromosome):

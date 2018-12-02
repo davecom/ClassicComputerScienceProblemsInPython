@@ -77,7 +77,8 @@ class GeneticAlgorithm(Generic[C]):
     def run(self) -> C:
         best: C = max(self._population, key=self._fitness_key)
         for generation in range(self._max_generations):
-            if best.fitness() >= self._threshold: # early exit if we beat threshold
+            # early exit if we beat threshold
+            if best.fitness() >= self._threshold:
                 return best
             print(f"Generation {generation} Best {best.fitness()} Avg {mean(map(self._fitness_key, self._population))}")
             self._reproduce_and_replace()

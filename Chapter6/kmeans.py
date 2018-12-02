@@ -100,7 +100,7 @@ class KMeans(Generic[Point]):
             for cluster in self._clusters: # clear all clusters
                 cluster.points.clear()
             self._assign_clusters() # find cluster each point is closest to
-            old_centroids: List[DataPoint] = deepcopy(self._centroids) # record centroids
+            old_centroids: List[DataPoint] = deepcopy(self._centroids) # record
             self._generate_centroids() # find new centroids
             if old_centroids == self._centroids: # have centroids moved?
                 print(f"Converged after {iteration} iterations")

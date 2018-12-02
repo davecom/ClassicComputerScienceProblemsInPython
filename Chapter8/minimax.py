@@ -60,7 +60,8 @@ def alphabeta(board: Board, maximizing: bool, original_player: Piece, max_depth:
         return beta
 
 
-# Find the best possible move in the current position looking up to max_depth ahead
+# Find the best possible move in the current position
+# looking up to max_depth ahead
 def find_best_move(board: Board, max_depth: int = 8) -> Move:
     best_eval: float = float("-inf")
     best_move: Move = Move(-1)
