@@ -38,11 +38,11 @@ class GeneticAlgorithm(Generic[C]):
 
     # Use the probability distribution wheel to pick 2 parents
     # Note: will not work with negative fitness results
-    def _pick_roulette(self, wheel: List[float]) -> Tuple[C, C]:
+    def _pick_roulette(self, wheel: List[float]) -> Tuple[C, ...]:
         return tuple(choices(self._population, weights=wheel, k=2))
 
     # Choose num_participants at random and take the best 2
-    def _pick_tournament(self, num_participants: int) -> Tuple[C, C]:
+    def _pick_tournament(self, num_participants: int) -> Tuple[C, ...]:
         participants: List[C] = choices(self._population, k=num_participants)
         return tuple(nlargest(2, participants, key=self._fitness_key))
 
@@ -53,7 +53,7 @@ class GeneticAlgorithm(Generic[C]):
         while len(new_population) < len(self._population):
             # pick the 2 parents
             if self._selection_type == GeneticAlgorithm.SelectionType.ROULETTE:
-                parents: Tuple[C, C] = self._pick_roulette([x.fitness() for x in self._population])
+                parents: Tuple[C, ...] = self._pick_roulette([x.fitness() for x in self._population])
             else:
                 parents = self._pick_tournament(len(self._population) // 2)
             # potentially crossover the 2 parents
