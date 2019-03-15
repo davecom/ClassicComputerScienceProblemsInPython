@@ -1,5 +1,6 @@
 # Classic Computer Science Problems in Python
 This repository contains source code to accompany the book *Classic Computer Science Problems in Python* by David Kopec. You will find the source organized by chapter. **As you read the book, each code listing contains a file name that corresponds to a file in this repository.**
+
 ![Classic Computer Science Problems in Python Cover](cover.jpg)
 
 ## Get the Book
