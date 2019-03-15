@@ -86,5 +86,5 @@ class GeneticAlgorithm(Generic[C]):
             highest: C = max(self._population, key=self._fitness_key)
             if highest.fitness() > best.fitness():
                 best = highest # found a new best
-        return best # best we found in max_generations
+        return best # best we found in _max_generations
 
