@@ -4,7 +4,7 @@ This repository contains source code to accompany the book *Classic Computer Sci
 ![Classic Computer Science Problems in Python Cover](cover.jpg)
 
 ## Get the Book
-- [Manning](https://www.manning.com/books/classic-computer-science-problems-in-python) the publisher sells both hard copy and DRM-free eBook editions.
+- [Manning](https://www.manning.com/books/classic-computer-science-problems-in-python) the publisher sells both hard copy and DRM-free eBook editions
 - [Amazon](https://amzn.to/2ui96Op) if you buy the hard copy from Amazon, it will come with a way to download the eBook for free from the publisher
 
 ## Versioning and Packages
