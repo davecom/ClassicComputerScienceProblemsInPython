@@ -32,11 +32,11 @@ C = TypeVar("C", bound="Comparable")
 
 
 class Comparable(Protocol):
-    def __eq__(self, other: Any) -> bool:
-        ...
+    def __eq__(self: C, other: C) -> bool:
+        return self == other
 
     def __lt__(self: C, other: C) -> bool:
-        ...
+        return (self < other) and self != other
 
     def __gt__(self: C, other: C) -> bool:
         return (not self < other) and self != other
