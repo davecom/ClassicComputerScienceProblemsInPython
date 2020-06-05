@@ -31,7 +31,7 @@ def mst(wg: WeightedGraph[V], start: int = 0) -> Optional[WeightedPath]:
         return None
     result: WeightedPath = [] # holds the final MST
     pq: PriorityQueue[WeightedEdge] = PriorityQueue()
-    visited: [bool] = [False] * wg.vertex_count # where we've been
+    visited: List[bool] = [False] * wg.vertex_count # where we've been
 
     def visit(index: int):
         visited[index] = True # mark as visited
