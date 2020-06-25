@@ -20,4 +20,6 @@ You can find general questions and descriptive information about the book on the
 All of the source code in this repository is released under the Apache License version 2.0. See `LICENSE`.
 
 ## Other Books and Languages
-This is the second book in the Classic Computer Science Problems series by David Kopec and published by Manning. It aims to teach classic computer science problems in a Pythonic way. You may also want to checkout the first book in the series, *Classic Computer Science Problems in Swift*, which covers most of the same problems in a more Swifty way. You can check out the repository for that book on [GitHub as well](https://github.com/davecom/ClassicComputerScienceProblemsInSwift). A reader has also reimplemented the first five chapters of the book [in C++](https://github.com/araya-andres/classic_computer_sci).
+- [Classic Computer Science Problems in Java](https://github.com/davecom/ClassicComputerScienceProblemsInJava)
+- [Classic Computer Science Problems in Swift](https://github.com/davecom/ClassicComputerScienceProblemsInSwift)
+- [A Reimplementation of the Book in C++ (not by the author)](https://github.com/araya-andres/classic_computer_sci)
