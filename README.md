@@ -20,6 +20,12 @@ You can find general questions and descriptive information about the book on the
 All of the source code in this repository is released under the Apache License version 2.0. See `LICENSE`.
 
 ## Other Books and Languages
+Official Books from the Series by @davecom 
 - [Classic Computer Science Problems in Java](https://github.com/davecom/ClassicComputerScienceProblemsInJava)
 - [Classic Computer Science Problems in Swift](https://github.com/davecom/ClassicComputerScienceProblemsInSwift)
-- [A Reimplementation of the Book in C++ (not by the author)](https://github.com/araya-andres/classic_computer_sci)
+
+Ports
+- [C++ implementation by @aray-andres](https://github.com/araya-andres/classic_computer_sci)
+- [Go implementation by @arlima](https://github.com/arlima/problemas_classicos_CC)
+- [PHP implementation by @SaschaKersken (German translator of CCSPiP)](https://github.com/SaschaKersken/ClassicComputerScienceProblemsInPhp)
+- [JavaScript implementation by @SaschaKersken (German translator of CCSPiP)](https://github.com/SaschaKersken/ClassicComputerScienceProblemsInJavaScript)
