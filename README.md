@@ -29,3 +29,4 @@ Ports
 - [Go implementation by @arlima](https://github.com/arlima/problemas_classicos_CC)
 - [PHP implementation by @SaschaKersken (German translator of CCSPiP)](https://github.com/SaschaKersken/ClassicComputerScienceProblemsInPhp)
 - [JavaScript implementation by @SaschaKersken (German translator of CCSPiP)](https://github.com/SaschaKersken/ClassicComputerScienceProblemsInJavaScript)
+- [Ruby implementation by @tj84](https://github.com/tj84/cs_problems)
