@@ -43,6 +43,11 @@ def knapsack(items: List[Item], max_capacity: int) -> List[Item]:
             solution.append(items[i - 1])
             # if the item was used, remove its weight
             capacity -= items[i - 1].weight
+
+            # if there's no capacity left, we are done
+            if not capacity:
+                break
+
     return solution
 
 
