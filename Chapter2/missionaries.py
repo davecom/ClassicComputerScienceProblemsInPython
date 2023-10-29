@@ -42,7 +42,7 @@ class MCState:
     def __hash__(self) -> int:
         state: int = self.wm * MAX_NUM**3 + self.wc * MAX_NUM**2 + self.em * MAX_NUM + self.ec
         state *= 1 if self.boat else -1
-        return state
+        return hash(state)
         
     def goal_test(self) -> bool:
         return self.is_legal and self.em == MAX_NUM and self.ec == MAX_NUM
