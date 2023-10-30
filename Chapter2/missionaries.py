@@ -40,7 +40,7 @@ class MCState:
                (self.boat == other.boat)
     
     def __hash__(self) -> int:
-        state: int = self.wm * MAX_NUM**3 + self.wc * MAX_NUM**2 + self.em * MAX_NUM + self.ec
+        state: int = self.wm * (MAX_NUM + 1)**3 + self.wc * (MAX_NUM + 1)**2 + self.em * (MAX_NUM + 1) + self.ec
         state *= 1 if self.boat else -1
         return hash(state)
         
