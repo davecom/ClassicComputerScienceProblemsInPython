@@ -30,3 +30,4 @@ Ports
 - [PHP implementation by @SaschaKersken (German translator of CCSPiP)](https://github.com/SaschaKersken/ClassicComputerScienceProblemsInPhp)
 - [JavaScript implementation by @SaschaKersken (German translator of CCSPiP)](https://github.com/SaschaKersken/ClassicComputerScienceProblemsInJavaScript)
 - [Ruby implementation by @tj84](https://github.com/tj84/cs_problems)
+- [Rust implementation by @marpetercontribs](https://github.com/marpetercontribs/classic-computer-science-problems-in-rust)
