@@ -13,7 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-from typing import TypeVar, Generic, List, Tuple
+from typing import TypeVar, Generic, List, Tuple, Optional
 from graph import Graph
 from weighted_edge import WeightedEdge
 
@@ -21,7 +21,9 @@ V = TypeVar('V') # type of the vertices in the graph
 
 
 class WeightedGraph(Generic[V], Graph[V]):
-    def __init__(self, vertices: List[V] = []) -> None:
+    def __init__(self, vertices: Optional[List[V]] = None) -> None:
+        if vertices is None:
+            vertices = []
         self._vertices: List[V] = vertices
         self._edges: List[List[WeightedEdge]] = [[] for _ in vertices]
 

@@ -21,7 +21,9 @@ V = TypeVar('V') # type of the vertices in the graph
 
 
 class Graph(Generic[V]):
-    def __init__(self, vertices: List[V] = []) -> None:
+    def __init__(self, vertices: Optional[List[V]] = None) -> None:
+        if vertices is None:
+            vertices = []
         self._vertices: List[V] = vertices
         self._edges: List[List[Edge]] = [[] for _ in vertices]
 
