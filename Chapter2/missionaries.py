@@ -34,6 +34,16 @@ class MCState:
                 "The boat is on the {} bank.")\
             .format(self.wm, self.wc, self.em, self.ec, ("west" if self.boat else "east"))
 
+    def __eq__(self, other) -> bool:
+        return (self.wm == other.wm) and (self.wc == other.wc) and \
+               (self.em == other.em) and (self.ec == other.ec) and \
+               (self.boat == other.boat)
+    
+    def __hash__(self) -> int:
+        state: int = self.wm * (MAX_NUM + 1)**3 + self.wc * (MAX_NUM + 1)**2 + self.em * (MAX_NUM + 1) + self.ec
+        state *= 1 if self.boat else -1
+        return hash(state)
+        
     def goal_test(self) -> bool:
         return self.is_legal and self.em == MAX_NUM and self.ec == MAX_NUM
 
