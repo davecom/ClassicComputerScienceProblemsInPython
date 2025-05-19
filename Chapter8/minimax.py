@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 from __future__ import annotations
-from board import Piece, Board, Move
+from .board import Piece, Board, Move
 
 
 # Find the best possible outcome for original player

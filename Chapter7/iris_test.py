@@ -19,11 +19,14 @@ from util import normalize_by_feature_scaling
 from network import Network
 from random import shuffle
 
+import pathlib
+
 if __name__ == "__main__":
     iris_parameters: List[List[float]] = []
     iris_classifications: List[List[float]] = []
     iris_species: List[str] = []
-    with open('iris.csv', mode='r') as iris_file:
+    data_path = pathlib.Path(__file__).parent / 'iris.csv'
+    with open(data_path, mode='r') as iris_file:
         irises: List = list(csv.reader(iris_file))
         shuffle(irises) # get our lines of data in random order
         for iris in irises:

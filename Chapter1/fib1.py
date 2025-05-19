@@ -16,9 +16,14 @@
 
 
 def fib1(n: int) -> int:
-    return fib1(n - 1) + fib1(n - 2)
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib1(n - 1) + fib1(n - 2)
 
 
 if __name__ == "__main__":
     print(fib1(5))
-# Note that this example is purposefully wrong.
+# Note that this example is now fixed with proper base cases.
